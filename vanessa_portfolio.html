@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanessa Huang — Brand & Communications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bd: #2C1810;
+  --bm: #8B6355;
+  --bl: #C4A882;
+  --cr: #FAFAF8;
+  --cw: #F2EDE8;
+  --cm: #E8DDD4;
+  --td: #1A1A1A;
+  --tm: #5C4A3E;
+  --tl: #9A8880;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cr); color: var(--td); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 28px 64px;
+  transition: background .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  background: rgba(250,250,248,.95);
+  backdrop-filter: blur(14px);
+  border-color: var(--cm);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400; letter-spacing: .04em;
+  color: var(--bd); text-decoration: none;
+}
+.nav-links { display: flex; gap: 44px; list-style: none; }
+.nav-links a {
+  font-size: 11px; font-weight: 400; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--tm); text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--bd); }
+
+/* ══════════════════
+   HERO
+══════════════════ */
+.hero {
+  min-height: 100vh;
+  padding: 0 64px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: relative;
+}
+
+/* centre content vertically */
+.hero-main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+/* ── left: headline block ── */
+.hero-left {}
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 10px; font-weight: 500; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--bm);
+  margin-bottom: 36px;
+}
+.hero-eyebrow::before {
+  content: ''; display: block;
+  width: 36px; height: 1px; background: var(--bm);
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 6.5vw, 96px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -.02em;
+  color: var(--bd);
+}
+.hero-headline em { font-style: italic; }
+
+/* ── right: meta block ── */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  /* align to bottom of headline */
+  align-self: flex-end;
+  padding-bottom: 6px;
+}
+
+.hero-body {
+  font-size: 14px; font-weight: 300; line-height: 1.9;
+  color: var(--tm);
+  padding-top: 24px;
+  border-top: 1px solid var(--cm);
+}
+
+.hero-actions {
+  display: flex; align-items: center; gap: 20px;
+}
+
+.btn-primary {
+  display: inline-block; padding: 13px 28px;
+  background: var(--bd); color: var(--cr);
+  font-size: 11px; font-weight: 400; letter-spacing: .1em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background .22s, transform .18s;
+}
+.btn-primary:hover { background: var(--bm); transform: translateY(-2px); }
+
+.btn-text {
+  font-size: 11px; font-weight: 400; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--tm); text-decoration: none;
+  border-bottom: 1px solid var(--cm); padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.btn-text:hover { color: var(--bd); border-color: var(--bd); }
+
+/* ── stats bar ── */
+.hero-stats-bar {
+  display: flex;
+  border-top: 1px solid var(--cm);
+  padding: 28px 0 52px;
+}
+.hero-stat {
+  flex: 1;
+  padding: 0 28px;
+  border-right: 1px solid var(--cm);
+}
+.hero-stat:first-child { padding-left: 0; }
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 600; color: var(--bd);
+  line-height: 1; margin-bottom: 6px;
+}
+.hero-stat-label {
+  font-size: 9px; color: var(--tl);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* ══════════════════
+   SHARED
+══════════════════ */
+section { padding: 120px 64px; }
+
+.section-tag {
+  font-size: 10px; font-weight: 500; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--bm);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.section-tag::before { content: ''; display: block; width: 36px; height: 1px; background: var(--bm); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 52px); font-weight: 300;
+  line-height: 1.15; color: var(--bd); margin-bottom: 16px;
+}
+.section-title em { font-style: italic; }
+
+.section-intro {
+  font-size: 15px; font-weight: 300; line-height: 1.85;
+  color: var(--tm); max-width: 720px; margin-bottom: 64px;
+}
+
+/* ══════════════════
+   WORK
+══════════════════ */
+#work { padding: 120px 64px; }
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.case-card {
+  position: relative; cursor: pointer;
+  overflow: hidden; background: var(--cw);
+  aspect-ratio: 4/3;
+}
+.case-card-bg {
+  width: 100%; height: 100%;
+  background-size: cover; background-position: center;
+  transition: transform .65s cubic-bezier(.25,.46,.45,.94);
+}
+.case-card:hover .case-card-bg { transform: scale(1.05); }
+.case-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,24,16,.93) 0%, rgba(44,24,16,.18) 50%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 36px 30px; transition: background .3s;
+}
+.case-card:hover .case-card-overlay {
+  background: linear-gradient(to top, rgba(44,24,16,.97) 0%, rgba(44,24,16,.5) 65%, rgba(44,24,16,.08) 100%);
+}
+.case-num { font-size: 10px; letter-spacing: .16em; color: var(--bl); margin-bottom: 10px; text-transform: uppercase; }
+.case-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--cr); line-height: 1.2; margin-bottom: 6px; }
+.case-subtitle { font-size: 12px; font-weight: 300; color: rgba(250,250,248,.55); margin-bottom: 14px; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 20px; }
+.case-tag { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--bl); border: 1px solid rgba(196,168,130,.32); padding: 3px 8px; }
+.case-arrow {
+  font-size: 11px; color: var(--cr); letter-spacing: .08em;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .28s, transform .28s;
+  background: none; border: none; font-family: 'DM Sans', sans-serif;
+  cursor: pointer; display: inline-flex; align-items: center;
+  gap: 8px; text-transform: uppercase; padding: 0;
+}
+.case-card:hover .case-arrow { opacity: 1; transform: translateY(0); }
+
+/* ── case detail ── */
+.case-detail { display: none; position: fixed; inset: 0; z-index: 200; background: var(--cr); overflow-y: auto; }
+.case-detail.active { display: block; }
+.case-detail-inner { max-width: 820px; margin: 0 auto; padding: 80px 60px; }
+.back-btn { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--tm); cursor: pointer; margin-bottom: 56px; background: none; border: none; font-family: 'DM Sans', sans-serif; transition: color .2s; }
+.back-btn:hover { color: var(--bd); }
+.detail-kicker { font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--bm); margin-bottom: 16px; }
+.detail-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,52px); font-weight: 300; color: var(--bd); line-height: 1.1; margin-bottom: 24px; }
+.detail-meta { display: flex; gap: 40px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid var(--cm); margin-bottom: 52px; }
+.detail-meta-label { font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--tl); margin-bottom: 4px; }
+.detail-meta-value { font-size: 14px; font-weight: 400; color: var(--td); }
+.detail-section { margin-bottom: 48px; }
+.detail-section-title { font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--bm); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--cw); }
+.detail-body { font-size: 15px; font-weight: 300; line-height: 1.88; color: var(--tm); }
+.detail-body p { margin-bottom: 14px; }
+.detail-body p:last-child { margin-bottom: 0; }
+.detail-body strong { font-weight: 500; color: var(--td); }
+.detail-quote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; color: var(--bd); line-height: 1.6; padding: 28px 36px; border-left: 2px solid var(--bl); background: var(--cw); margin: 28px 0; }
+.detail-results { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 3px; margin: 28px 0; }
+.result-item { background: var(--cw); padding: 26px 18px; text-align: center; }
+.result-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--bd); line-height: 1; margin-bottom: 8px; }
+.result-label { font-size: 9px; color: var(--tl); letter-spacing: .1em; text-transform: uppercase; line-height: 1.5; }
+.role-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.role-badge { font-size: 11px; color: var(--bd); background: var(--cm); padding: 5px 12px; }
+
+/* ── about ── */
+#about { padding: 120px 64px; background: var(--cw); }
+.about-grid { display: grid; grid-template-columns: 300px 1fr; gap: 100px; align-items: start; }
+.about-photo-col { position: relative; }
+.about-photo { display: block; width: 100%; height: 400px; object-fit: cover; object-position: 40% top; }
+.about-photo-col::after { content: ''; position: absolute; top: 14px; left: -14px; width: 100%; height: 100%; border: 1px solid var(--bl); z-index: -1; }
+.about-photo-caption { margin-top: 16px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--tl); line-height: 1.7; }
+.about-text { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--tm); margin-bottom: 18px; }
+.about-pull { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; color: var(--bd); line-height: 1.6; padding: 28px 0; border-top: 1px solid var(--cm); border-bottom: 1px solid var(--cm); margin: 32px 0; }
+.journey { margin-top: 36px; }
+.journey-item { display: flex; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--cm); }
+.journey-item:last-child { border-bottom: none; }
+.journey-year { font-size: 11px; font-weight: 500; color: var(--bm); letter-spacing: .05em; min-width: 68px; padding-top: 2px; }
+.journey-text { font-size: 13px; font-weight: 300; color: var(--tm); line-height: 1.65; }
+.journey-text strong { font-weight: 500; color: var(--td); }
+
+/* ── contact ── */
+#contact { padding: 100px 64px; background: var(--bd); text-align: center; }
+#contact .section-tag { justify-content: center; }
+#contact .section-tag::before { background: var(--bl); }
+#contact .section-title { color: var(--cr); margin: 0 auto 16px; }
+.contact-sub { font-size: 15px; font-weight: 300; color: rgba(250,250,248,.55); max-width: 400px; margin: 0 auto 48px; line-height: 1.75; }
+.contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.contact-link { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: 13px 30px; transition: all .2s; }
+.cl-primary { background: var(--cr); color: var(--bd); }
+.cl-primary:hover { background: var(--cw); transform: translateY(-2px); }
+.cl-ghost { color: var(--cr); border: 1px solid rgba(250,250,248,.28); }
+.cl-ghost:hover { border-color: var(--cr); transform: translateY(-2px); }
+
+footer { background: var(--bd); padding: 20px 64px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(250,250,248,.08); }
+footer p { font-size: 11px; color: rgba(250,250,248,.22); letter-spacing: .05em; }
+
+.fade-up { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .nav-links { gap: 24px; }
+  .hero { padding: 0 24px; }
+  .hero-main { grid-template-columns: 1fr; gap: 40px; padding-top: 110px; }
+  .hero-headline { font-size: clamp(44px, 10vw, 68px); }
+  .hero-right { align-self: auto; }
+  .hero-stats-bar { flex-wrap: wrap; padding-bottom: 40px; }
+  .hero-stat { padding: 0 16px; min-width: 120px; }
+  section { padding: 72px 24px; }
+  #work { padding: 72px 24px; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-card { aspect-ratio: 4/3; }
+  #about { padding: 72px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo-col::after { display: none; }
+  .about-photo { height: 260px; }
+  .case-detail-inner { padding: 56px 24px; }
+  #contact { padding: 72px 24px; }
+  footer { padding: 18px 24px; flex-direction: column; gap: 6px; text-align: center; }
+}
+
+/* ── detail role grid ── */
+.detail-roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 16px;
+}
+.detail-role-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--cw);
+  align-items: flex-start;
+}
+.detail-role-icon {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--bl); min-width: 28px;
+  line-height: 1; padding-top: 2px;
+}
+.detail-role-text {
+  font-size: 13px; font-weight: 300;
+  color: var(--tm); line-height: 1.65;
+}
+.detail-role-text strong {
+  font-weight: 500; color: var(--td);
+  display: block; margin-bottom: 4px;
+}
+
+/* ── campaign label ── */
+.detail-campaign-label {
+  font-size: 10px; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--bl);
+  margin-bottom: 6px;
+}
+.detail-campaign-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400; color: var(--bd);
+  line-height: 1.2; margin-bottom: 20px;
+}
+
+/* ── slide images ── */
+.detail-slide-img {
+  width: 100%; display: block;
+  margin: 20px 0; border-radius: 2px;
+  border: 1px solid var(--cm);
+}
+.detail-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px; margin: 20px 0;
+}
+.detail-img-grid img {
+  width: 100%; display: block;
+  border-radius: 2px; border: 1px solid var(--cm);
+}
+
+/* ── press links ── */
+.detail-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+}
+.detail-link {
+  display: block;
+  padding: 18px 20px;
+  background: var(--cw);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: border-color .2s, background .2s;
+}
+.detail-link:hover {
+  border-left-color: var(--bl);
+  background: var(--cm);
+}
+.detail-link-label {
+  font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--tl);
+  margin-bottom: 6px;
+}
+.detail-link-title {
+  font-size: 13px; font-weight: 400;
+  color: var(--bd); line-height: 1.4;
+}
+
+/* ── YouTube short embed ── */
+.detail-video-wrap {
+  margin: 24px auto 0;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 9/16;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--cm);
+}
+.detail-video-wrap iframe {
+  width: 100%; height: 100%;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .detail-roles-grid { grid-template-columns: 1fr; }
+  .detail-links-grid { grid-template-columns: 1fr; }
+  .detail-img-grid { grid-template-columns: 1fr; }
+  .detail-video-wrap { max-width: 280px; }
+}
+
+/* ── YouTube side-by-side grid ── */
+.detail-yt-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.detail-yt-wrap iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  border: 1px solid var(--cm);
+}
+.detail-yt-label {
+  font-size: 11px;
+  color: var(--tl);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ── STAR section labels ── */
+.star-label {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bm);
+  border: 1px solid var(--bl);
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+
+/* ── highlight sentence ── */
+.detail-highlight {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--bd);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* ── STAR paragraph block ── */
+.star-block {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--cw);
+}
+.star-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.star-block .detail-body {
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Vanessa Huang</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero" id="home">
+  <div class="hero-main">
+
+    <!-- ✏️ LEFT: big headline -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">Brand &amp; Communications</div>
+      <h1 class="hero-headline">
+        On tiptoe:<br>
+        <em>always curious,<br>
+        always reaching.</em>
+      </h1>
+    </div>
+
+    <!-- ✏️ RIGHT: body + CTA -->
+    <div class="hero-right">
+      <p class="hero-body">
+        Brand communications professional with 2+ years of agency experience, 
+        turning consumer insight into campaigns that move people, and metrics.
+        Currently completing MSc International Marketing at King's College London.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View Work</a>
+        <a href="#about" class="btn-text">About Me</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✏️ STATS BAR -->
+  <div class="hero-stats-bar">
+    <div class="hero-stat">
+      <div class="hero-stat-num">2+</div>
+      <div class="hero-stat-label">Years in Agency</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">20+</div>
+      <div class="hero-stat-label">Integrated Campaigns</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">£1.2M+</div>
+      <div class="hero-stat-label">Estimated PR Value</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">2</div>
+      <div class="hero-stat-label">Industry Awards Won</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WORK ═══ -->
+<section id="work">
+  <div class="section-tag">Selected Work</div>
+  <!-- ✏️ Work標題 -->
+  <h2 class="section-title">Campaigns that connect<br><em>people to brands</em></h2>
+  <p class="section-intro">Four case studies spanning integrated PR campaigns, sustainability issues communications, consumer insight-led strategy, and digital content, each showing a different dimension of how I think and work.</p>
+
+  <div class="cases-grid">
+
+    <!-- CASE 1: MCD campaigns -->
+    <div class="case-card fade-up" onclick="openCase('mcd')">
+      <div class="case-card-bg" style="background-color:#1e1008;background-image:url('mcd.jpg');"></div>
+      <div class="case-card-overlay">
+        <div class="case-num">01 / McDonald's Taiwan × Golin</div>
+        <div class="case-title">Campaigns at Scale</div>
+        <div class="case-subtitle">2+ years, 20+ integrated campaigns</div>
+        <div class="case-tags">
+          <span class="case-tag">PR</span>
+          <span class="case-tag">Campaign Execution</span>
+          <span class="case-tag">KOL</span>
+          <span class="case-tag">Brand Comms</span>
+        </div>
+        <button class="case-arrow">View Case ↗</button>
+      </div>
+    </div>
+
+    <!-- CASE 2: Plastic coating -->
+    <div class="case-card fade-up" style="transition-delay:.1s" onclick="openCase('plastic')">
+      <div class="case-card-bg" style="background-color:#1a2e1a;background-image:url('package.jpg');background-position:center;"></div>
+      <div class="case-card-overlay">
+        <div class="case-num">02 / McDonald's Taiwan</div>
+        <div class="case-title">Saying Goodbye to Plastic Coating</div>
+        <div class="case-subtitle">Issues communications · Awards strategy</div>
+        <div class="case-tags">
+          <span class="case-tag">Sustainability Comms</span>
+          <span class="case-tag">Issues PR</span>
+          <span class="case-tag">Awards Strategy</span>
+        </div>
+        <button class="case-arrow">View Case ↗</button>
+      </div>
+    </div>
+
+    <!-- CASE 3: Heinz -->
+    <div class="case-card fade-up" style="transition-delay:.2s" onclick="openCase('heinz')">
+      <div class="case-card-bg" style="background-color:#5a0a0a;background-image:url('Heinz.jpg');background-position:center top;"></div>
+      <div class="case-card-overlay">
+        <div class="case-num">03 / Heinz UK × KCL Ad Venture</div>
+        <div class="case-title">Beyond Dipping</div>
+        <div class="case-subtitle">Consumer insight → integrated campaign strategy</div>
+        <div class="case-tags">
+          <span class="case-tag">Consumer Research</span>
+          <span class="case-tag">Brand Strategy</span>
+          <span class="case-tag">Creative Concept</span>
+        </div>
+        <button class="case-arrow">View Case ↗</button>
+      </div>
+    </div>
+
+    <!-- CASE 4: Sony -->
+    <div class="case-card fade-up" style="transition-delay:.3s" onclick="openCase('sony')">
+      <div class="case-card-bg" style="background-color:#0d0d1a;background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80');"></div>
+      <div class="case-card-overlay">
+        <div class="case-num">04 / Sony Music Taiwan</div>
+        <div class="case-title">Content that Moves</div>
+        <div class="case-subtitle">TikTok growth + digital content strategy</div>
+        <div class="case-tags">
+          <span class="case-tag">TikTok</span>
+          <span class="case-tag">Content Strategy</span>
+          <span class="case-tag">Social Growth</span>
+        </div>
+        <button class="case-arrow">View Case ↗</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CASE DETAIL: McDONALD'S ═══ -->
+<div class="case-detail" id="case-mcd">
+  <div class="case-detail-inner">
+    <button class="back-btn" onclick="closeCase()">← Back to Work</button>
+
+    <div class="detail-kicker">01 / McDonald's Taiwan × Golin</div>
+    <h2 class="detail-title">Campaigns at Scale</h2>
+
+    <div class="detail-meta">
+      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Account Supervisor, Consumer Team</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Agency</div><div class="detail-meta-value">Golin Taipei</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Duration</div><div class="detail-meta-value">Apr 2023 – Aug 2025</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Client</div><div class="detail-meta-value">McDonald's Taiwan</div></div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Overview</div>
+      <div class="detail-body">
+        <p>Over two years at Golin Taipei, I built and ran PR communications for McDonald's Taiwan, one of the agency's largest consumer accounts, progressing from Account Executive to Account Supervisor. My work spanned product launches, digital services, sustainability and community campaigns, managing everything from press strategy to KOL negotiation to crisis response.</p>
+      </div>
+      <div class="detail-results">
+        <div class="result-item"><div class="result-num">20+</div><div class="result-label">Integrated Campaigns</div></div>
+        <div class="result-item"><div class="result-num">£1.2M+</div><div class="result-label">Estimated PR Value</div></div>
+        <div class="result-item"><div class="result-num">200+</div><div class="result-label">Media Clippings (peak)</div></div>
+        <div class="result-item"><div class="result-num">15+</div><div class="result-label">KOL Collaborations</div></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">My Responsibilities</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>Campaign Execution</strong><br>Full ownership of 20+ integrated campaigns from brief to delivery across PR, digital and partnership channels</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>Media Relations</strong><br>Authored 20+ press releases, led journalist outreach and reviewed junior team copy for message consistency</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>KOL and Partnership</strong><br>Managed 15+ influencer collaborations and 10+ brand partnerships from negotiation through post-campaign reporting</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>Crisis Communications</strong><br>Developed issue-response materials including monitoring reports, FAQs and client-facing recovery messaging</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGN 01: DA HONG PAO -->
+    <div class="detail-section">
+      <div class="detail-campaign-label">Campaign 01</div>
+      <h3 class="detail-campaign-title">Da Hong Pao Sichuan Pepper Fried Chicken — Product Launch</h3>
+      <img src="DHP.jpg" alt="Da Hong Pao Sichuan Pepper Fried Chicken" class="detail-slide-img">
+
+      <div class="star-block">
+        <div class="star-label">Challenge</div>
+        <div class="detail-highlight">A bold new flavour in a crowded market. Novelty alone rarely drives trial.</div>
+        <div class="detail-body"><p>Launching Da Hong Pao Sichuan Pepper Fried Chicken required more than awareness. In fast food, consumers default to the familiar. The product needed to feel credible before it could feel exciting.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Strategy</div>
+        <div class="detail-highlight">Sequence the narrative: credibility before excitement.</div>
+        <div class="detail-body"><p>I designed a two-wave KOL approach built around the consumer decision journey. Culinary expert 詹姆士 launched the evening before go-live, speaking to food-curious audiences about flavour depth and quality. Food creator 吃貨豪豪 posted on launch day to convert that anticipation into purchase intent. Each creator served a distinct role in the funnel.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Action</div>
+        <div class="detail-highlight">Full launch ownership across PR, KOL and brand social channels.</div>
+        <div class="detail-body">
+          <p>As project owner, I delivered the press release, managed media outreach across food and lifestyle channels, and handled KOL negotiation and briefing end-to-end.</p>
+          <p>Beyond KOL, I built a brand social co-creation layer: coordinating an official McDonald's social post and negotiating 7 brand comment partnerships with Taiwan consumer brands including Milksha, Kuaike and Kadina. I secured 3 additional brand-initiated posts beyond the original brief, extending the campaign's organic reach through brands that spoke directly to the same audience.</p>
+        </div>
+      </div>
+
+      <div class="detail-section-title" style="margin-top:28px;">KOL Campaign</div>
+      <div class="detail-img-grid">
+        <div class="detail-yt-wrap">
+          <iframe src="https://www.youtube.com/embed/3SpyoCZ2JNo" title="詹姆士 x 大紅袍香麻炸雞腿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="detail-yt-label">詹姆士 · Pre-launch · Culinary credibility</div>
+        </div>
+        <div class="detail-yt-wrap">
+          <iframe src="https://www.youtube.com/embed/KuSufUEymQE" title="吃貨豪豪 x 大紅袍香麻炸雞腿" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="detail-yt-label">吃貨豪豪 · Launch day · Trial conversion</div>
+        </div>
+      </div>
+
+      <div class="detail-results">
+        <div class="result-item"><div class="result-num">223</div><div class="result-label">Media Coverage</div></div>
+        <div class="result-item"><div class="result-num">$63.4M</div><div class="result-label">PR Value</div></div>
+        <div class="result-item"><div class="result-num">1.15M+</div><div class="result-label">KOL Video Views</div></div>
+        <div class="result-item"><div class="result-num">7</div><div class="result-label">Brand Partnerships</div></div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGN 02 -->
+    <div class="detail-section">
+      <div class="detail-campaign-label">Campaign 02</div>
+      <h3 class="detail-campaign-title">舉杯之勞做環保 — Sustainability Campaign</h3>
+      <img src="earthday.png" alt="舉杯之勞做環保 Campaign" class="detail-slide-img">
+
+      <div class="star-block">
+        <div class="star-label">Challenge</div>
+        <div class="detail-highlight">Consumers care about sustainability but won't change behaviour if it feels hard.</div>
+        <div class="detail-body"><p>As a fast food brand, McDonald's also faced genuine scepticism about whether its environmental commitments meant anything. The campaign had to feel effortless and credible at the same time.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Insight</div>
+        <div class="detail-highlight">The barrier was perceived effort, not attitude.</div>
+        <div class="detail-body"><p>If the action felt small enough, participation would follow. The cultural phrase "舉手之勞" (a small effort) gave us a hook that was already embedded in everyday Taiwanese language.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Action</div>
+        <div class="detail-highlight">Reframe one daily gesture into an environmental act.</div>
+        <div class="detail-body"><p>I developed the communications strategy around a single reframe: "舉手之勞" became "舉杯之勞做環保": lifting a reusable cup as a meaningful environmental choice. I coordinated multi-brand partnerships with 6 major Taiwan brands and NGO RE-THINK, and managed full KOL execution across digital and PR channels to amplify at scale.</p></div>
+      </div>
+      <div class="detail-results">
+        <div class="result-item"><div class="result-num">153%</div><div class="result-label">Target Consumer Participation</div></div>
+        <div class="result-item"><div class="result-num">113%</div><div class="result-label">Target KOL Response</div></div>
+        <div class="result-item"><div class="result-num">190</div><div class="result-label">Media Articles</div></div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGN 03 -->
+    <div class="detail-section">
+      <div class="detail-campaign-label">Campaign 03</div>
+      <h3 class="detail-campaign-title">WcDonald's — Culture-Led Campaign</h3>
+      <img src="WCD.jpg" alt="WcDonald's Campaign" class="detail-slide-img">
+
+      <div class="star-block">
+        <div class="star-label">Challenge</div>
+        <div class="detail-highlight">Strong global fandom recognition. Near-zero awareness in Taiwan's mainstream.</div>
+        <div class="detail-body"><p>The brief was to generate broad consumer buzz without losing the cultural credibility that made WcDonald's exciting to the core anime audience in the first place.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Strategy</div>
+        <div class="detail-highlight">Use the fandom as a cultural bridge, not a walled garden.</div>
+        <div class="detail-body"><p>Rather than pushing outward through traditional media, I identified Coser creators as the entry point: credible within the anime community, but with reach into mainstream social feeds. Making them the primary content layer let the campaign feel discovered rather than broadcast.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Action</div>
+        <div class="detail-body"><p>I coordinated exclusive behind-the-scenes media coverage with WCD production studios including Acky Bright, managed cross-platform KOL partnerships targeting anime communities, and oversaw the Coser creator strategy from briefing through content delivery and media amplification.</p></div>
+      </div>
+      <div class="detail-results">
+        <div class="result-item"><div class="result-num">257+</div><div class="result-label">Media Articles</div></div>
+        <div class="result-item"><div class="result-num">16K+</div><div class="result-label">Post Likes</div></div>
+        <div class="result-item"><div class="result-num">130K</div><div class="result-label">Social Impressions</div></div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGN 04 -->
+    <div class="detail-section">
+      <div class="detail-campaign-label">Campaign 04</div>
+      <h3 class="detail-campaign-title">Ping Pong Boys — Charity Film Screening</h3>
+      <img src="pingpong.jpeg" alt="Ping Pong Boys Campaign" class="detail-slide-img">
+
+      <div class="star-block">
+        <div class="star-label">Challenge</div>
+        <div class="detail-highlight">Connect McDonald's to youth empowerment in a way that felt genuine rather than corporate.</div>
+        <div class="detail-body"><p>The campaign also needed to generate earned media in Hualien, a regional market where McDonald's presence was lighter and local credibility mattered more.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Action</div>
+        <div class="detail-body"><p>As project owner, I planned and executed a charity film screening for the Taiwanese sports film "Ping Pong Boys", bringing 100+ young table tennis athletes into the experience. I managed local media invitations, arranged brand executive and actor press roundtables, and coordinated multi-venue logistics across cinema and restaurant activations.</p></div>
+      </div>
+      <div class="detail-quote">"The moment I stood at the edge of that school courtyard, watching young athletes light up over a campaign I'd spent months building, that's when I understood what brand communications can actually do."</div>
+      <div class="detail-results">
+        <div class="result-item"><div class="result-num">61</div><div class="result-label">Media Articles</div></div>
+        <div class="result-item"><div class="result-num">NT$12.3M</div><div class="result-label">PR Value</div></div>
+        <div class="result-item"><div class="result-num">100+</div><div class="result-label">Student Athletes</div></div>
+      </div>
+    </div>
+
+    <!-- PRESS LINKS -->
+    <div class="detail-section">
+      <div class="detail-section-title">Selected Press and Publications</div>
+      <p style="font-size:13px;font-weight:300;color:var(--tm);margin-bottom:20px;line-height:1.7;">Press releases I authored and campaigns I executed, published on McDonald's Taiwan official newsroom and quarterly report.</p>
+      <div class="detail-links-grid">
+        <a class="detail-link" href="https://www.mcdonalds.com/tw/zh-tw/newsroom/2023/20230919.html" target="_blank">
+          <div class="detail-link-label">Press Release · Sep 2023</div>
+          <div class="detail-link-title">Da Hong Pao Launch →</div>
+        </a>
+        <a class="detail-link" href="https://www.mcdonalds.com/tw/zh-tw/newsroom/2025/20250421.html" target="_blank">
+          <div class="detail-link-label">Press Release · Apr 2025</div>
+          <div class="detail-link-title">McDonald's Taiwan Newsroom →</div>
+        </a>
+        <a class="detail-link" href="https://www.mcdonalds.com/tw/zh-tw/newsroom/2025/20250616.html" target="_blank">
+          <div class="detail-link-label">Press Release · Jun 2025</div>
+          <div class="detail-link-title">McDonald's Taiwan Newsroom →</div>
+        </a>
+        <a class="detail-link" href="https://www.mcdonalds.com/tw/zh-tw/newsroom/2025/20250630.html" target="_blank">
+          <div class="detail-link-label">Press Release · Jun 2025</div>
+          <div class="detail-link-title">McDonald's Taiwan Newsroom →</div>
+        </a>
+        <a class="detail-link" href="https://news.mcdonalds.com.tw/news/20260301/index.html" target="_blank">
+          <div class="detail-link-label">Quarterly Report · Mar 2026</div>
+          <div class="detail-link-title">McDonald's Taiwan CSR Report →</div>
+        </a>
+        <a class="detail-link" href="https://news.mcdonalds.com.tw/news/20250602/index.html" target="_blank">
+          <div class="detail-link-label">Quarterly Report · Jun 2025</div>
+          <div class="detail-link-title">McDonald's Taiwan CSR Report →</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CASE DETAIL: HEINZ ═══ -->
+<div class="case-detail" id="case-heinz">
+  <div class="case-detail-inner">
+    <button class="back-btn" onclick="closeCase()">← Back to Work</button>
+
+    <div class="detail-kicker">02 / Heinz UK × KCL Ad Venture Competition</div>
+    <h2 class="detail-title">Beyond Dipping</h2>
+
+    <div class="detail-meta">
+      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Focus Group Design, Strategy and Creative Lead</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Context</div><div class="detail-meta-value">KCL Ad Venture Competition</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Date</div><div class="detail-meta-value">January 2026</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Market</div><div class="detail-meta-value">UK / Gen Z</div></div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">The Brief</div>
+      <div class="detail-body">
+        <p><strong>Challenge:</strong> Heinz UK was present in Gen Z kitchens but invisible in their consideration: bought by default, never by deliberate choice. The brief was to make a 150-year-old condiment feel actively worth choosing.</p>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">My Role</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>Focus Group Design and Moderation</strong><br>Designed and ran 3 consumer focus groups with UK Gen Z to uncover behavioural barriers</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>Strategy Lead</strong><br>Translated qualitative insights into a brand strategy platform and consumer proposition</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>Creative Concept</strong><br>Led the "Beyond Dipping" campaign idea from insight to integrated O2O execution plan</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>Activation Planning</strong><br>Co-developed channel strategy, influencer framework and budget allocation with the team</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Consumer Insight — From Focus Groups</div>
+      <img src="portfolio_image_1.jpg" alt="Focus Group Insight" class="detail-slide-img">
+      <div class="detail-quote">"Ketchup is ketchup, I just grab whatever's there." — Gen Z focus group participant</div>
+      <div class="star-block">
+        <div class="star-label">Insight</div>
+        <div class="detail-highlight">The problem was not awareness. It was category relevance.</div>
+        <div class="detail-body"><p>From three focus groups I designed and moderated: ketchup is a default purchase, not a chosen brand. No one compares options at the shelf. A second finding emerged alongside this: Gen Z living alone for the first time, cooking out of necessity, missing the warmth of having someone show them how. That emotional gap became Heinz's strategic opening.</p></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Strategy</div>
+      <img src="portfolio_image_2.jpg" alt="Campaign Strategy" class="detail-slide-img">
+      <div class="star-block">
+        <div class="star-label">Strategy</div>
+        <div class="detail-highlight">Reframe Heinz from condiment to kitchen companion.</div>
+        <div class="detail-body"><p>The platform, <strong>Teaching Gen Z How to Cook</strong>, repositioned Heinz as the patient, warm presence by your side when you are figuring out adult life for the first time. Tone: supportive, humorous, nostalgic. The activation plan built outward from this: a YouTube cooking show, a campus food truck tour across four London universities, and a 57-minute competitive cooking challenge using Heinz's iconic number as the content mechanic.</p></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Campaign Concept — Beyond Dipping</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>Cook Talk Repeat</strong><br>YouTube series: chefs and Gen Z cooks prepare simple Heinz-led dishes together, making the brand's role feel natural</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>Pop-Up Food Truck</strong><br>Toured 4 London university campuses with hands-on cooking sessions, turning the digital campaign into a physical experience</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>57-Minute Challenge</strong><br>Competitive YouTube format using Heinz's iconic "57 varieties" as the timing mechanic, creating a naturally branded content hook</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>#BeyondDipping Challenge</strong><br>UGC mechanic: audiences recreate dishes from the show using Heinz as an ingredient, turning viewers into creators</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CASE DETAIL: SONY ═══ -->
+<div class="case-detail" id="case-sony">
+  <div class="case-detail-inner">
+    <button class="back-btn" onclick="closeCase()">← Back to Work</button>
+
+    <div class="detail-kicker">03 / Sony Music Taiwan</div>
+    <h2 class="detail-title">Content that Moves</h2>
+
+    <div class="detail-meta">
+      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Marketing Intern</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Company</div><div class="detail-meta-value">Sony Music Taiwan</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Duration</div><div class="detail-meta-value">Mar 2021 – Jun 2022</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Platforms</div><div class="detail-meta-value">TikTok, LINE</div></div>
+    </div>
+
+    <div class="detail-section">
+      <div class="star-block">
+        <div class="star-label">Challenge</div>
+        <div class="detail-highlight">Music marketing on TikTok defaults to promotion. The goal was content people choose to watch.</div>
+        <div class="detail-body"><p>Most labels approached TikTok by posting campaign assets and hoping they spread. The actual opportunity was building content with native shareability, where music became the entry point rather than the message.</p></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">My Responsibilities</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>TikTok Content Strategy</strong><br>Developed content series anchored in platform behaviour and music release rhythms</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>Short-form Video Production</strong><br>Shot, edited and published short-form video content for artist and music campaigns</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>Audience Analysis</strong><br>Used platform data to inform content direction, topic selection and format decisions</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>Campaign Copywriting</strong><br>Wrote campaign copy and content angles for music marketing across TikTok and LINE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="star-block">
+        <div class="star-label">Action</div>
+        <div class="detail-highlight">Start from platform behaviour, not release schedules.</div>
+        <div class="detail-body"><p>I used audience data to identify what formats spread natively on TikTok, then built recurring short-form series designed around viewer habits rather than one-off posts. Content was planned to compound over time, not spike and disappear.</p></div>
+      </div>
+      <div class="star-block">
+        <div class="star-label">Result</div>
+        <div class="detail-body"><p>The official Sony Music Taiwan TikTok account grew by 80K+ followers during the internship period. One video series reached 4M views.</p></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Account Growth</div>
+      <img src="portfolio_image_3.png" alt="Sony Music Taiwan TikTok Account" class="detail-slide-img" style="max-width:500px;margin-left:auto;margin-right:auto;">
+      <div class="detail-results" style="margin-top:20px;">
+        <div class="result-item"><div class="result-num">80K+</div><div class="result-label">New TikTok Followers</div></div>
+        <div class="result-item"><div class="result-num">4M</div><div class="result-label">Views on One Video Series</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CASE DETAIL: PLASTIC ═══ -->
+<div class="case-detail" id="case-plastic">
+  <div class="case-detail-inner">
+    <button class="back-btn" onclick="closeCase()">← Back to Work</button>
+
+    <div class="detail-kicker">04 / McDonald's Taiwan — Sustainability Communications</div>
+    <h2 class="detail-title">Saying Goodbye<br>to Plastic Coating</h2>
+
+    <div class="detail-meta">
+      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Project Owner, Sustainability Communications</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Agency</div><div class="detail-meta-value">Golin Taipei</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Timeline</div><div class="detail-meta-value">Oct 2024 – Aug 2025</div></div>
+      <div class="detail-meta-item"><div class="detail-meta-label">Type</div><div class="detail-meta-value">Issues PR · Sustainability Comms</div></div>
+    </div>
+
+    <div class="detail-section">
+      <div class="star-block">
+        <img src="package2.jpg" alt="McDonald's plastic-free packaging" class="detail-slide-img">
+        <div class="star-label">Challenge</div>
+        <div class="detail-highlight">A genuine sustainability breakthrough that consumers could not see and might easily misread as cost-cutting.</div>
+        <div class="detail-body"><p>McDonald's Taiwan had completed three years of R&D to remove plastic coating from all food packaging paper, reducing plastic use by 86 tonnes annually. The communications challenge was twofold: making an invisible supply chain innovation feel personally relevant to consumers, and getting ahead of the obvious misread that switching from boxes to paper was simply a way to save money.</p></div>
+      </div>
+
+      <div class="star-block">
+        <div class="star-label">Action</div>
+        <div class="detail-highlight">Built the full communications framework before handing over the keys.</div>
+        <div class="detail-body"><p>As project owner, I led the planning phase end-to-end: press release, consumer messaging framework, awards nomination strategy and sustainability expo concept. The framework had to hold without me in the room, so clarity and handover documentation were as important as the strategy itself.</p></div>
+      </div>
+      <div class="detail-results">
+        <div class="result-item"><div class="result-num">86T</div><div class="result-label">Plastic Reduced Annually</div></div>
+        <div class="result-item"><div class="result-num">10,000</div><div class="result-label">Trees Worth of Paper Saved Per Year</div></div>
+        <div class="result-item"><div class="result-num">2</div><div class="result-label">Industry Awards Won</div></div>
+      </div>
+      <img src="package.jpg" alt="McDonald's plastic-free packaging" class="detail-slide-img">
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">The Communications Challenge</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>Translating Technical into Human</strong><br>Plastic coating removal is invisible to consumers. The task: make a supply chain decision feel personally relevant</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>Countering the Costdown Perception</strong><br>Box-to-paper packaging risks being read as cost-cutting. Messaging had to reframe it as brand leadership before consumers got there first</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>One Story, Three Audiences</strong><br>Consumers, media and awards panels each needed a different entry point, without contradicting each other</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>Building for Handover</strong><br>The framework had to be clear enough for the team to execute confidently after my departure</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Messaging Strategy</div>
+      <div class="detail-quote">"小改變，大美好 — Scale for good."</div>
+      <div class="star-block">
+        <div class="star-label">Insight</div>
+        <div class="detail-highlight">The consumer barrier was perception, not reality.</div>
+        <div class="detail-body"><p>Paper wrapping works just as well as a box. We led with lived experience rather than technical achievement: same convenience, meaningfully less environmental impact. Three principles anchored the framework: lead with the everyday experience rather than the supply chain story; position the initiative as brand commitment rather than regulatory compliance; and anchor every claim in a number concrete enough for a journalist or an awards panel to repeat.</p></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">My Role</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>Press Release</strong><br>Authored the official announcement, translating three years of R&D into a media-ready brand narrative</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>Consumer Messaging Framework</strong><br>Defined key messages, anticipated objections and response guidelines — built to hold without me in the room</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>Awards Nomination Strategy</strong><br>Identified award opportunities and recommended category positioning based on the initiative's sustainability and innovation credentials</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>Sustainability Expo Planning</strong><br>Developed the exhibit concept and content, translating the packaging story into a physical brand experience</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Recognition</div>
+      <div class="detail-roles-grid">
+        <div class="detail-role-item">
+          <div class="detail-role-icon">01</div>
+          <div class="detail-role-text"><strong>2025 Food Innovation Award — Grand Prize</strong><br>評審團大獎. Taiwan's most prestigious food industry innovation award, described as "the Oscars of Taiwan's food industry"</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">02</div>
+          <div class="detail-role-text"><strong>2025 Food Innovation Award — Packaging Technology Innovation Three Stars</strong><br>包裝技術創新類三星. Highest star rating in category</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">03</div>
+          <div class="detail-role-text"><strong>行銷傳播貢獻獎 — Gold Award</strong><br>Advertiser of the Year, Corporate Social Responsibility, Environmental Sustainability Category</div>
+        </div>
+        <div class="detail-role-item">
+          <div class="detail-role-icon">04</div>
+          <div class="detail-role-text"><strong>Quarterly Report and Press Release Author</strong><br>Authored the brand's sustainability quarterly report feature and the official press release announcing the initiative</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Press and Publications</div>
+      <p style="font-size:13px;font-weight:300;color:var(--tm);margin-bottom:20px;line-height:1.7;">Quarterly report and press release authored by me, plus third-party award and media coverage.</p>
+      <div class="detail-links-grid">
+        <a class="detail-link" href="https://news.mcdonalds.com.tw/news/20250602/index.html" target="_blank">
+          <div class="detail-link-label">Quarterly Report (authored) · Jun 2025</div>
+          <div class="detail-link-title">From a Single Sheet of Paper →</div>
+        </a>
+        <a class="detail-link" href="https://www.mcdonalds.com/tw/zh-tw/newsroom/2025/20250708.html" target="_blank">
+          <div class="detail-link-label">Press Release (authored) · Jul 2025</div>
+          <div class="detail-link-title">McDonald's Taiwan Newsroom →</div>
+        </a>
+        <a class="detail-link" href="https://esg.gvm.com.tw/article/115299" target="_blank">
+          <div class="detail-link-label">Award Coverage · ESG 遠見</div>
+          <div class="detail-link-title">跟塑膠淋膜說掰掰 →</div>
+        </a>
+        <a class="detail-link" href="https://www.foodnext.net/science/packing/paper/6851136745" target="_blank">
+          <div class="detail-link-label">Award Coverage · 食力 foodNEXT</div>
+          <div class="detail-link-title">評審團大獎 得獎報導 →</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="about-grid">
+    <!-- ✏️ 左側照片 -->
+    <div class="about-photo-col fade-up">
+      <img class="about-photo" src="portfolio_image_4.jpg" alt="Vanessa Huang">
+      <div class="about-photo-caption">
+        Vanessa Huang · London, UK<br>
+        MSc International Marketing, KCL
+      </div>
+    </div>
+
+    <!-- ✏️ 右側文字 -->
+    <div class="fade-up" style="transition-delay:.15s">
+      <div class="section-tag">About</div>
+      <h2 class="section-title">The person<br><em>behind the work</em></h2>
+
+      <p class="about-text">I've always been someone who stands on tiptoe, not just physically, but as an instinct. To see what's happening in the room. To understand what the person next to me is thinking. To reach for the context I don't yet have.</p>
+
+      <p class="about-text">I think that's what drew me to marketing. It's the discipline that rewards exactly that: the curiosity to understand people before you try to speak to them, and the patience to translate that understanding into something they actually feel.</p>
+
+      <div class="about-pull">"The moment I stood at the edge of a school courtyard in rural Taiwan, watching 400 children light up over a campaign I'd spent months building — that's when I understood what brand communications can actually do."</div>
+
+      <p class="about-text">I spent 2+ years at Golin Taipei in Consumer Team, progressing from Account Executive to Account Supervisor. Now at King's College London for my MSc in International Marketing, applying an academic lens to skills I've already built in the field.</p>
+
+      <div class="journey">
+        <div class="journey-item">
+          <div class="journey-year">2018</div>
+          <div class="journey-text"><strong>National Chengchi University, Taiwan</strong> — BA in Radio and Television, Minor in Education</div>
+        </div>
+        <div class="journey-item">
+          <div class="journey-year">2021</div>
+          <div class="journey-text"><strong>Sony Music, Taiwan</strong> — First taste of digital marketing and content creation</div>
+        </div>
+        <div class="journey-item">
+          <div class="journey-year">2022</div>
+          <div class="journey-text"><strong>University of Augsburg, Germany</strong> — Exchange programee in Business & Marketing. Outstanding Student Scholarship.</div>
+        </div>
+        <div class="journey-item">
+          <div class="journey-year">2023</div>
+          <div class="journey-text"><strong>Golin Taipei, Taiwan</strong> — 2+ years in consumer team, Taiwan. Account Executive → Account Supervisor.</div>
+        </div>
+        <div class="journey-item">
+          <div class="journey-year">2025</div>
+          <div class="journey-text"><strong>King's College London, UK</strong> — MSc International Marketing. Heinz, Dr. Akita, AnyFeast projects.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="section-tag">Get in Touch</div>
+  <h2 class="section-title">Let's work together</h2>
+  <!-- ✏️ 說明文字 -->
+  <p class="contact-sub">Open to brand management, PR, integrated marketing and campaign roles. Based in London.</p>
+  <div class="contact-links">
+    <!-- ✏️ 改成你的Email -->
+    <a href="mailto:yuhanh0330@gmail.com" class="contact-link cl-primary">yuhanh0330@gmail.com</a>
+    <!-- ✏️ 改成你的LinkedIn -->
+    <a href="https://www.linkedin.com/in/vanessa-huang-502b78222" target="_blank" class="contact-link cl-ghost">LinkedIn ↗</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Vanessa Huang</p>
+  <p>Brand &amp; Communications · London</p>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Case detail
+function openCase(id) {
+  document.getElementById('case-' + id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('case-' + id).scrollTop = 0;
+}
+function closeCase() {
+  document.querySelectorAll('.case-detail').forEach(d => d.classList.remove('active'));
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCase(); });
+</script>
+</body>
+</html>
